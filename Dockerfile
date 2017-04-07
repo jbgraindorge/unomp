@@ -4,7 +4,7 @@ FROM node:0.10
 RUN apt-get update && apt-get install -y build-essential libssl-dev && rm -rf /var/lib/apt/lists/*
 
 #nvm
-RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.32.1/install.sh | bash \
+RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash \
 && export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" \
 nvm install stable\
 nvm use stable
