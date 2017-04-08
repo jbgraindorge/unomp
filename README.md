@@ -3,5 +3,7 @@ A docker build of: unified-node-open-mining-portal.
 
 https://github.com/UNOMP/unified-node-open-mining-portal/blob/master/config.json.example
 
-Mount config.json as follows:
-Docker RUN -v /host/user/unomp/config.json:/usr/src/app/unomp/config.json [container name]
+This container is supposed to be used with redis, for this I am using a seperate container.
+These could be deployed together using a stackfile, see stackfile.example.
+
+This file also contains the needed ports and volumes.
