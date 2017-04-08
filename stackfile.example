@@ -1,0 +1,26 @@
+redis:
+  autoredeploy: true
+  deployment_strategy: every_node
+  environment:
+    - REDIS_APPENDONLY=yes
+  image: 'redis:latest'
+  net: host
+  ports:
+    - '6379:6379'
+  restart: always
+  volumes:
+    - '/home/user/unomp/redis:/data'
+unomp:
+  autoredeploy: true
+  deployment_strategy: every_node
+  image: 'larsm/unomp:latest'
+  net: host
+  ports:
+    - '80:80'
+    - '3008:3008'
+    - '3032:3032'
+    - '3256:3256'
+  restart: always
+  volumes:
+    - '/home/user/unomp/config.json:/usr/src/app/unomp/config.json:ro'
+    - '/home/user/unomp/pool_configs:/usr/src/app/unomp/pool_configs:ro'
