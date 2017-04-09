@@ -1,7 +1,7 @@
 FROM node:0.10
 
 # Add Namecoin repository
-RUN wget -nv http://download.opensuse.org/repositories/home:p_conrad:coins/xUbuntu_16.04/Release.key -O Release.key && sudo apt-key add - < Release.key
+RUN sh -c "echo 'deb http://download.opensuse.org/repositories/home:/p_conrad:/coins/xUbuntu_16.04/ /' > /etc/apt/sources.list.d/namecoin.list"
 
 # Get needed packages
 RUN apt-get update && apt-get install -y build-essential namecoin libssl-dev && rm -rf /var/lib/apt/lists/*
