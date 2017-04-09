@@ -1,10 +1,7 @@
 FROM node:0.10
 
-# Add Namecoin repository
-RUN sh -c "echo 'deb http://download.opensuse.org/repositories/home:/p_conrad:/coins/xUbuntu_16.04/ /' > /etc/apt/sources.list.d/namecoin.list"
-
 # Get needed packages
-RUN apt-get update && apt-get install -f -y build-essential namecoin libssl-dev && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y build-essential libssl-dev && rm -rf /var/lib/apt/lists/*
 
 # NVM
 RUN curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash \
