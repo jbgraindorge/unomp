@@ -7,3 +7,5 @@ This container is supposed to be used with redis, for this I am using a seperate
 These could be deployed together using a stackfile, see stackfile.example.
 
 This file also contains the needed ports and volumes.
+
+This container requires you to setup wallets on the host which can be used to deposit and spread the coins.
