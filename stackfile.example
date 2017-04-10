@@ -17,9 +17,11 @@ unomp:
   net: host
   ports:
     - '80:80'
+    - '2300:2300'
     - '3008:3008'
     - '3032:3032'
     - '3256:3256'
+    - '8336:8336'
   restart: always
   volumes:
     - '/home/user/unomp/config.json:/usr/src/app/unomp/config.json:ro'
